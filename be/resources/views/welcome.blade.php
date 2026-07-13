@@ -202,12 +202,83 @@ section { padding: 100px 5% 80px; position: relative; }
 .hero-buttons { display: flex; gap: 20px; }
 .hero-mockup {
   display: flex; justify-content: center;
-  align-items: center; position: relative;
+  align-items: center; gap: 15px;
+  position: relative;
+  width: 100%;
 }
-.hero-mockup img {
-  max-width: 200px; width: 100%; height: auto; border-radius: 40px;
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2)) drop-shadow(0 0 40px rgba(76,223,43,0.15));
+/* CSS Mockup Frame Premium */
+.hero-mockup .phone-container {
+  position: relative;
+  max-width: 170px; width: 100%;
+  padding: 6px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  border-radius: 34px;
+  box-shadow: 
+    0 25px 50px -12px rgba(0,0,0,0.25), 
+    inset 0 2px 4px rgba(255,255,255,0.8), 
+    inset 0 -2px 6px rgba(0,0,0,0.1),
+    0 0 0 1px rgba(255,255,255,0.4);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+  z-index: 2;
   animation: float 6s ease-in-out infinite;
+}
+.hero-mockup .phone-container::after {
+  /* Notch yang lebih kecil dan elegan */
+  content: '';
+  position: absolute;
+  top: 6px; left: 50%;
+  transform: translateX(-50%);
+  width: 30%; height: 12px;
+  background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  z-index: 5;
+}
+.hero-mockup .phone-container::before {
+  /* Lensa kamera depan */
+  content: '';
+  position: absolute;
+  top: 9px; left: 50%;
+  transform: translateX(-50%);
+  width: 4px; height: 4px;
+  background-color: #1a1a1a;
+  border-radius: 50%;
+  z-index: 6;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.2);
+}
+.hero-mockup .phone-container:nth-child(1) { animation-delay: 0s; }
+.hero-mockup .phone-container:nth-child(2) { animation-delay: 1s; }
+.hero-mockup .phone-container:nth-child(3) { animation-delay: 2s; }
+
+.hero-mockup .phone-container img {
+  width: 100%; height: auto; 
+  border-radius: 28px;
+  display: block;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.hero-mockup .phone-container:hover {
+  transform: translateY(-15px) scale(1.05);
+  z-index: 10;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+}
+
+.phone-label {
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  padding: 6px 14px;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 @keyframes float {
   0% { transform: translateY(0px); }
@@ -449,7 +520,18 @@ section { padding: 100px 5% 80px; position: relative; }
         </div>
       </div>
       <div class="hero-mockup">
-        <img src="/images/v98_59.png" alt="AgriConnect App Mockup">
+        <div class="phone-container phone-left">
+          <img src="/images/petani_mockup.jpeg" alt="Beranda Petani">
+          <div class="phone-label">Petani</div>
+        </div>
+        <div class="phone-container phone-center">
+          <img src="/images/v98_59.jpeg" alt="Login">
+          <div class="phone-label">Login</div>
+        </div>
+        <div class="phone-container phone-right">
+          <img src="/images/pembeli_mockup.jpeg" alt="Beranda Pembeli">
+          <div class="phone-label">Pembeli</div>
+        </div>
       </div>
     </div>
   </section>
