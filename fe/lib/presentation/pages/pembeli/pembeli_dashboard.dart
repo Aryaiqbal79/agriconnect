@@ -112,8 +112,7 @@ class _PembeliDashboardState extends State<PembeliDashboard> {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: AgriBrandLogo(
-                    useTextLogo: true,
-                    textLogoHeight: 38,
+                    useTextLogo: false,
                     iconSize: 38,
                     iconBackground: Colors.white,
                     textStyle: TextStyle(

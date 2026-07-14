@@ -211,8 +211,7 @@ class _DashboardHeader extends StatelessWidget {
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: AgriBrandLogo(
-                        useTextLogo: true,
-                        textLogoHeight: compact ? 32 : 40,
+                        useTextLogo: false,
                         iconSize: compact ? 38 : 48,
                         iconBackground: isDark ? const Color(0xFF2A2A2A) : Colors.white,
                         textStyle: TextStyle(
