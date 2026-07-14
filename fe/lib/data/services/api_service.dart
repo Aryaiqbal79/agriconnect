@@ -43,7 +43,6 @@ class ApiService {
     return {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
-      'ngrok-skip-browser-warning': 'true',
       if (_token != null) 'Authorization': 'Bearer $_token',
     };
   }
@@ -52,14 +51,13 @@ class ApiService {
     if (hasToken) _startTimeoutCounter();
     return {
       'Accept': 'application/json',
-      'ngrok-skip-browser-warning': 'true',
       if (_token != null) 'Authorization': 'Bearer $_token',
     };
   }
 
   String get _connectionErrorMessage =>
       'Tidak bisa terhubung ke server (${ApiConstants.baseUrl}). '
-      'Pastikan backend/ngrok aktif dan API_HOST sesuai.';
+      'Pastikan Laravel sudah berjalan (php artisan serve) dan MySQL aktif.';
 
   Future<http.Response> getRequest(String endpoint) async {
     try {

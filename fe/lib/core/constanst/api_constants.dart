@@ -2,30 +2,31 @@ import 'package:flutter/foundation.dart';
 
 class ApiConstants {
   // -------------------------------------------------------
-  // PENTING: Ganti sesuai environment Anda:
+  // KONFIGURASI HOST BACKEND (Laravel + MySQL Lokal)
   //
   // OPSI 1 - DESKTOP/WEB (Windows, macOS, Linux):
   //   static const String _host = 'http://127.0.0.1:8000';
   //
   // OPSI 2 - ANDROID EMULATOR:
+  //   Gunakan 10.0.2.2 agar emulator bisa akses host PC
   //   static const String _host = 'http://10.0.2.2:8000';
   //
   // OPSI 3 - iOS SIMULATOR:
   //   static const String _host = 'http://127.0.0.1:8000';
   //
-  // OPSI 4 - PHYSICAL DEVICE (Ganti <PC-IP-ANDA> dengan IP PC):
-  //   static const String _host = 'http://<PC-IP-ANDA>:8000';
-  //   Contoh: 'http://192.168.1.5:8000'
+  // OPSI 4 - PHYSICAL DEVICE (Ganti dengan IP PC di jaringan yang sama):
+  //   flutter run --dart-define=API_HOST=http://192.168.1.5:8000
+  //   (Contoh: cek IP PC dengan `ipconfig` di Windows)
   //
   // OPSI 5 - FLUTTER WEB:
   //   static const String _host = 'http://127.0.0.1:8000';
-  //
-  // OPSI 6 - NGROK TUNNELING UNTUK MOBILE:
-  //   flutter run --dart-define=API_HOST=https://domain-ngrok-anda.ngrok-free.dev
   // -------------------------------------------------------
+
+  // Host yang bisa di-override via --dart-define=API_HOST=...
   static const String _configuredHost = String.fromEnvironment('API_HOST');
-  static const String _mobileNgrokHost =
-      'https://eliminate-ominous-bronco.ngrok-free.dev';
+
+  // Host default untuk Android Emulator (10.0.2.2 = loopback host PC)
+  static const String _androidEmulatorHost = 'http://10.0.2.2:8000';
 
   static String _normalizeHost(String host) {
     return host.trim().replaceAll(RegExp(r'/+$'), '');
@@ -35,13 +36,15 @@ class ApiConstants {
     if (kIsWeb) return 'http://127.0.0.1:8000';
 
     return switch (defaultTargetPlatform) {
-      TargetPlatform.android => _mobileNgrokHost,
+      TargetPlatform.android => _androidEmulatorHost,
       _ => 'http://127.0.0.1:8000',
     };
   }
 
   static String get _host {
     if (_configuredHost.isNotEmpty) {
+      // Jika API_HOST yang dikonfigurasi menunjuk ke loopback,
+      // ganti dengan host emulator yang benar untuk Android
       final isAndroid =
           !kIsWeb && defaultTargetPlatform == TargetPlatform.android;
       final pointsToDeviceItself =
