@@ -269,15 +269,16 @@ section { padding: 100px 5% 80px; position: relative; }
   bottom: -35px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--primary-color);
-  padding: 6px 16px;
-  border-radius: 20px;
-  color: #ffffff;
-  font-size: 14px;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  padding: 6px 14px;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 13px;
   font-weight: 700;
   white-space: nowrap;
-  border: 2px solid #ffffff;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 @keyframes float {
   0% { transform: translateY(0px); }
