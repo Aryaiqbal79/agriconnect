@@ -494,7 +494,7 @@ section { padding: 100px 5% 80px; position: relative; }
         <a href="#faq">FAQ</a>
       </nav>
       <div class="navbar-cta">
-        <a href="#cta" class="btn-navbar">Download</a>
+        <a href="/download/agriconnect.apk" download class="btn-navbar">Download</a>
       </div>
     </div>
   </header>
@@ -515,7 +515,7 @@ section { padding: 100px 5% 80px; position: relative; }
           AgriConnect adalah solusi digital terbaik untuk komoditas Beras dan Jagung. Kami menghubungkan petani lokal dengan pembeli secara langsung untuk rantai pasok yang lebih transparan dan efisien.
         </p>
         <div class="hero-buttons">
-          <a href="#cta" class="btn-primary">Unduh Aplikasi Sekarang</a>
+          <a href="/download/agriconnect.apk" download class="btn-primary">Unduh Aplikasi Sekarang</a>
           <a href="#features" class="btn-secondary">Pelajari Fitur</a>
         </div>
       </div>
@@ -736,7 +736,7 @@ section { padding: 100px 5% 80px; position: relative; }
       <h2 class="cta-title">Siap Memulai Pertanian Digital?</h2>
       <p class="cta-desc">Dapatkan aplikasi AgriConnect sekarang secara gratis. Kelola hasil panen dengan lebih baik dan dapatkan penawaran harga terbaik langsung di tangan Anda.</p>
       <div class="cta-buttons">
-        <a href="#" class="btn-cta-download">Download APK (Android)</a>
+        <a href="/download/agriconnect.apk" download class="btn-cta-download">Download APK (Android)</a>
       </div>
     </div>
   </section>
