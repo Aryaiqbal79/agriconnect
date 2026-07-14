@@ -188,7 +188,8 @@ section { padding: 100px 5% 80px; position: relative; }
 }
 .hero-title {
   font-size: 54px; font-weight: 800; line-height: 1.15;
-  margin-bottom: 20px; color: rgba(255,255,255,0.6);
+  margin-bottom: 20px; color: #ffffff;
+  text-shadow: 0 2px 15px rgba(0,0,0,0.4);
 }
 .hero-title .highlight { position: relative; display: inline-block; color: #ffffff; }
 .hero-title .highlight::after {
@@ -196,8 +197,9 @@ section { padding: 100px 5% 80px; position: relative; }
   width: 100%; height: 4px; background-color: var(--accent-color);
 }
 .hero-desc {
-  font-size: 18px; line-height: 1.6; opacity: 0.9;
+  font-size: 18px; line-height: 1.6; color: #ffffff; font-weight: 500;
   margin-bottom: 40px; max-width: 650px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.3);
 }
 .hero-buttons { display: flex; gap: 20px; }
 .hero-mockup {
